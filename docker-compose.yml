@@ -1,0 +1,13 @@
+version: "3"
+services:
+  jenkins:
+    build: .
+    image: registry.cn-beijing.aliyuncs.com/wangdali/codeforfun-jenkins
+    container_name: jenkins
+    environment:
+      TZ: Asia/Shanghai
+    user: root
+    networks:
+      - codeforfun-net
+networks:
+  codeforfun-net:

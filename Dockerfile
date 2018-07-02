@@ -1,15 +1,14 @@
 FROM tomcat:8
 
-ENV CATALINA_HOME /usr/local/tomcat
+ENV WEBAPP_HOME /usr/local/tomcat/webapps
 ENV PATH $CATALINA_HOME/bin:$PATH
-ENV ENV APP_PATH $CATALINA_HOME/webapps/jenkins
 
 RUN curl -SLO http://mirrors.jenkins.io/war-stable/latest/jenkins.war
-RUN mkdir $APP_PATH && mv jenkins.war $APP_PATH &&\
-  cd $APP_PATH && \
-  unzip jenkins.war && \
-  rm -rf jenkins.war
+RUN unzip jenkins.war && \
+  rm -rf jenkins.war $WEBAPP_HOME/ROOT && \
+  mv jenkins.war $WEBAPP_HOME && \
+  mv jenkins $WEBAPP_HOME/ROOT
 
 EXPOSE 8080
-RUN cd $CATALINA_HOME/bin
+
 CMD ["catalina.sh", "run"]

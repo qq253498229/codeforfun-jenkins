@@ -11,3 +11,5 @@ services:
       - codeforfun-net
 networks:
   codeforfun-net:
+    external:
+      name: codeforfun-net

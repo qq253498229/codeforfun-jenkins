@@ -9,6 +9,8 @@ services:
     user: root
     networks:
       - codeforfun-net
+    volumes:
+      - "./data:/var/jenkins_home"
 networks:
   codeforfun-net:
     external:

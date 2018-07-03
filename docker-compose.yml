@@ -6,6 +6,7 @@ services:
     container_name: jenkins
     environment:
       TZ: Asia/Shanghai
+    user: root
     networks:
       - codeforfun-net
     volumes:

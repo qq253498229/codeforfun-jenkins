@@ -1,5 +1,6 @@
 FROM tomcat:8
 
+ENV JENKINS_HOME /var/jenkins_home
 ENV WEBAPP_HOME /usr/local/tomcat/webapps
 ENV PATH $CATALINA_HOME/bin:$PATH
 

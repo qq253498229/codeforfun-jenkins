@@ -11,6 +11,7 @@ services:
       - codeforfun-net
     volumes:
       - "./data:/var/jenkins_home"
+      - "./ubuntu.pem:/ubuntu.pem"
 networks:
   codeforfun-net:
     external:

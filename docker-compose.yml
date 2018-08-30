@@ -2,7 +2,7 @@ version: "3"
 services:
   jenkins:
     build: .
-    image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-jenkins
+    image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-jenkins:2.121.3
     container_name: jenkins
     environment:
       TZ: Asia/Shanghai
